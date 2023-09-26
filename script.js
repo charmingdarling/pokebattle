@@ -39,19 +39,19 @@ const specialMin = 15;
 const specialMax = 25;
 
 function selectCharmander() {
-  selectionImage.src = "../images/charmander-removebg-preview.png";
+  selectionImage.src = "./images/charmander-removebg-preview.png";
   selectionImage.style.display = "initial";
   playerPokemon = "Charmander";
 }
 
 function selectSquirtle() {
-  selectionImage.src = "../images/squirtle-removebg-preview.png";
+  selectionImage.src = "./images/squirtle-removebg-preview.png";
   selectionImage.style.display = "initial";
   playerPokemon = "Squirtle";
 }
 
 function selectBulbasaur() {
-  selectionImage.src = "../images/bulbasaur-removebg-preview.png";
+  selectionImage.src = "./images/bulbasaur-removebg-preview.png";
   selectionImage.style.display = "initial";
   playerPokemon = "Bulbasaur";
 }
@@ -67,7 +67,7 @@ function startGame() {
 
   playerImage.src = "./images/" + playerPokemon + "-removebg-preview.png";
 
-  switch (player) {
+  switch (playerPokemon) {
     case "Charmander":
       playerAttackName = "Scratch";
       playerSpecialName = "Flamethrower";
@@ -83,7 +83,7 @@ function startGame() {
   }
   attackButton.value = playerAttackName;
   specialButton.value = playerSpecialName;
-  document.getElementById("EnemyPokemonName").textContent = playerPokemon;
+  document.getElementById("PlayerPokemonName").textContent = playerPokemon;
 
   let opponent = Math.ceil(Math.random() * 3);
 
@@ -104,14 +104,14 @@ function startGame() {
       enemySpecialName = "Leaf Storm";
       break;
   }
-  enemyImage.src = "./images/" + playerPokemon + "-removebg-preview.png";
-  document.getElementById("enemyPokemonName").textContent = playerPokemon;
+  enemyImage.src = "./images/" + enemyPokemon + "-removebg-preview.png";
+  document.getElementById("EnemyPokemonName").textContent = enemyPokemon;
 
   mainText.textContent = `Your opponent chose ${enemyPokemon}.`;
 
   attackButton.value = enemyAttackName;
   specialButton.value = enemySpecialName;
-  document.getElementById("PlayerPokemonName").textContent = enemyPokemon;
+  document.getElementById("PlayerPokemonName").textContent = playerPokemon;
 }
 
 function playerAttack() {}
